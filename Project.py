@@ -6,18 +6,21 @@ class ATM(object):
         self.bal=bal
 
     def withdrawCash(self,cash):
-        print("Taken out ₹"+cash)
-        currentBal=int(self.bal-cash)
-
+        print("Taken out ₹"+str(cash))
+        currentBal=self.bal-cash
+        print("Now your Balance is ₹"+currentBal)
+    
     def depositCash(self,cash):
-        print("Deposited ₹"+cash)
-        currentBal=int(self.bal+cash)
+        print("Deposited ₹"+str(cash))
+        currentBal=self.bal+cash
+        print("Now your Balance is ₹"+currentBal)
 
-
-atm=ATM(10000, 1234567890, 49311)
+atm=ATM(1234567890, 49311 , 10000)
 task=input("Do you want to Deposit or Withdraw?").lower().strip()
-cash=input("How much?")
+cash=int(input("How much?"))
 if task=="deposit":
+    print("Deposite")
     atm.depositCash(cash)
 if task=="withdraw":
+    print("withdraw")
     atm.withdrawCash(cash)
